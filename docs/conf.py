@@ -54,7 +54,7 @@ html_theme = 'alabaster'
 
 autoclass_content = 'both'
 
-master_file = 'index.rst'
+master_doc = 'index.rst'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
