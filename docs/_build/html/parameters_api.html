@@ -1,0 +1,317 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Parameters &#8212; Optimization Parameters  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Priors" href="priors_api.html" />
+    <link rel="prev" title="Optimization Parameters" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="parameters">
+<h1>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h1>
+<p>A basic parameters module for optimization routines.</p>
+<span class="target" id="module-optimparameters.parameters"></span><dl class="py class">
+<dt id="optimparameters.parameters.Parameter">
+<em class="property">class </em><code class="sig-prename descclassname">optimparameters.parameters.</code><code class="sig-name descname">Parameter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">value</span></em>, <em class="sig-param"><span class="n">minv</span><span class="o">=</span><span class="default_value">- inf</span></em>, <em class="sig-param"><span class="n">maxv</span><span class="o">=</span><span class="default_value">inf</span></em>, <em class="sig-param"><span class="n">vary</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">mcmcscale</span><span class="o">=</span><span class="default_value">0.5</span></em>, <em class="sig-param"><span class="n">commonality</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#optimparameters.parameters.Parameter" title="Permalink to this definition">¶</a></dt>
+<dd><p>A class for a model parameter.</p>
+<dl class="py attribute">
+<dt id="optimparameters.parameters.Parameter.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#optimparameters.parameters.Parameter.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the parameter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="optimparameters.parameters.Parameter.value">
+<code class="sig-name descname">value</code><a class="headerlink" href="#optimparameters.parameters.Parameter.value" title="Permalink to this definition">¶</a></dt>
+<dd><p>The current value of the parameter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="optimparameters.parameters.Parameter.minv">
+<code class="sig-name descname">minv</code><a class="headerlink" href="#optimparameters.parameters.Parameter.minv" title="Permalink to this definition">¶</a></dt>
+<dd><p>The min bound.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="optimparameters.parameters.Parameter.maxv">
+<code class="sig-name descname">maxv</code><a class="headerlink" href="#optimparameters.parameters.Parameter.maxv" title="Permalink to this definition">¶</a></dt>
+<dd><p>The max bound.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="optimparameters.parameters.Parameter.vary">
+<code class="sig-name descname">vary</code><a class="headerlink" href="#optimparameters.parameters.Parameter.vary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether or not to vary this parameter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="optimparameters.parameters.Parameter.mcmcscale">
+<code class="sig-name descname">mcmcscale</code><a class="headerlink" href="#optimparameters.parameters.Parameter.mcmcscale" title="Permalink to this definition">¶</a></dt>
+<dd><p>The mcmc scale step of the parameter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="optimparameters.parameters.Parameter.commonality">
+<code class="sig-name descname">commonality</code><a class="headerlink" href="#optimparameters.parameters.Parameter.commonality" title="Permalink to this definition">¶</a></dt>
+<dd><p>What this parameter is common to. Can be anything the user decides to implement.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Creates a Parameter object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – The name of the parameter.</p></li>
+<li><p><strong>value</strong> (<em>str</em>) – The value of the parameter.</p></li>
+<li><p><strong>minv</strong> (<em>str</em>) – The min bound.</p></li>
+<li><p><strong>maxv</strong> (<em>str</em>) – The max bound.</p></li>
+<li><p><strong>vary</strong> (<em>str</em>) – Whether or not to vary this parameter.</p></li>
+<li><p><strong>mcmcscale</strong> (<em>str</em>) – The mcmc scale step of the parameter.</p></li>
+<li><p><strong>commonality</strong> (<em>str</em>) – What this parameter is common to. Can be anything the user decides to implement.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="optimparameters.parameters.Parameter.setv">
+<code class="sig-name descname">setv</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#optimparameters.parameters.Parameter.setv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Setter method for the attributes.</p>
+<dl class="simple">
+<dt>kwargs:</dt><dd><p>Any available atrribute (str).</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="optimparameters.parameters.Parameters">
+<em class="property">class </em><code class="sig-prename descclassname">optimparameters.parameters.</code><code class="sig-name descname">Parameters</code><a class="headerlink" href="#optimparameters.parameters.Parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>A container for a set of model parameters which extends the Python 3 dictionary, which is ordered by default.</p>
+<dl class="py method">
+<dt id="optimparameters.parameters.Parameters.add_parameter">
+<code class="sig-name descname">add_parameter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parameter</span></em><span class="sig-paren">)</span><a class="headerlink" href="#optimparameters.parameters.Parameters.add_parameter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a parameter to the Parameters dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>parameter</strong> (<a class="reference internal" href="#optimparameters.parameters.Parameter" title="optimparameters.parameters.Parameter"><em>Parameter</em></a>) – The parameter to add.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="optimparameters.parameters.Parameters.from_numpy">
+<em class="property">classmethod </em><code class="sig-name descname">from_numpy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">names</span></em>, <em class="sig-param"><span class="n">values</span></em>, <em class="sig-param"><span class="n">minvs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">maxvs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">varies</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mcmcscales</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">commonalities</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#optimparameters.parameters.Parameters.from_numpy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a parameters object from numpy arrays</p>
+<dl class="simple">
+<dt>kwargs:</dt><dd><p>Iterables of parameter attributes.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="optimparameters.parameters.Parameters.oflength">
+<em class="property">classmethod </em><code class="sig-name descname">oflength</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="headerlink" href="#optimparameters.parameters.Parameters.oflength" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a parameters object of some length with dummy names.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>n</strong> (<em>int</em>) – The number of parameters to add.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A list containing parameter names (strings) which are out of bounds.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bad_pars (list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="optimparameters.parameters.Parameters.pretty_print">
+<code class="sig-name descname">pretty_print</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#optimparameters.parameters.Parameters.pretty_print" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints all parameters and attributes in a readable fashion.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="optimparameters.parameters.Parameters.sanity_check">
+<code class="sig-name descname">sanity_check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#optimparameters.parameters.Parameters.sanity_check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks for parameters which vary and are out of bounds.
+:returns: A list containing parameter names (strings) which are out of bounds.
+:rtype: bad_pars (list)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="optimparameters.parameters.Parameters.sanity_lock">
+<code class="sig-name descname">sanity_lock</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#optimparameters.parameters.Parameters.sanity_lock" title="Permalink to this definition">¶</a></dt>
+<dd><p>Locks any parameters such that the min value is equal to the max value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="optimparameters.parameters.Parameters.setv">
+<code class="sig-name descname">setv</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#optimparameters.parameters.Parameters.setv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Setter method for an attribute(s) for all parameters, in order of insertion.</p>
+<dl class="simple">
+<dt>kwargs:</dt><dd><p>Any available Parameter atrribute.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="optimparameters.parameters.Parameters.unpack">
+<code class="sig-name descname">unpack</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">keys</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#optimparameters.parameters.Parameters.unpack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unpacks values to numpy arrays.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>keys</strong> (<em>tuple</em>) – A tuple of strings containing the keys to unpack, defaults to None for all keys.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dictionary containing the returned values.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>vals (dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Optimization Parameters</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="priors_api.html">Priors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="priors_api.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Optimization Parameters</a></li>
+      <li>Next: <a href="priors_api.html" title="next chapter">Priors</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Bryson Cale.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/parameters_api.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
