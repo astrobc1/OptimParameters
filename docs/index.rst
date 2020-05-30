@@ -8,6 +8,8 @@ Optimization Parameters
 
 A basic parameters module for optimization routines.
 
+Install with ``pip install optimparameters``
+
 .. toctree::
    :maxdepth: 2
    
