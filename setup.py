@@ -19,15 +19,14 @@ setuptools.setup(
     author_email="bryson.cale1@gmail.com",
     description="Simple optimization parameters implementation.",
     longdescription=long_description,
-    long_description_content_type="text/rst",
+    long_description_content_type="text/x-rst",
     packages = setuptools.find_packages(),
     include_package_data=True,
     install_requires=install_requires,
     url="https://github.com/astrobc1/optimparameters",
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: GPLv3",
-        "Operating System :: Linux, MacOS",
+        "Operating System :: Unix"
     ],
     python_requires='>=3.6'
 )
