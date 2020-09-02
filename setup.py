@@ -14,7 +14,7 @@ with open("README.rst", "r") as fh:
 
 setuptools.setup(
     name="optimparameters",
-    version="1.0.0",
+    version="1.0.2",
     author="Bryson Cale",
     author_email="bryson.cale1@gmail.com",
     description="Simple optimization parameters implementation.",
