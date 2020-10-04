@@ -15,7 +15,8 @@ class Parameter:
         commonality (str): What this parameter is common to. Can be anything the user decides to implement.
     """
     
-    default_keys = ('name', 'value', 'minv', 'maxv', 'vary', 'mcmcscale', 'commonality', 'uncertainty')
+    __slots__ = ['name', 'value', 'minv', 'maxv', 'vary', 'mcmcscale', 'commonality', 'uncertainty']
+    #default_keys = ['name', 'value', 'minv', 'maxv', 'vary', 'mcmcscale', 'commonality', 'uncertainty']
 
     def __init__(self, name=None, value=None, minv=-np.inf, maxv=np.inf, vary=True, mcmcscale=None, commonality=None, uncertainty=None):
         """Creates a Parameter object.
@@ -69,7 +70,8 @@ class Parameters(dict):
     """A container for a set of model parameters which extends the Python 3 dictionary, which is ordered by default.
     """
     
-    default_keys = Parameter.default_keys
+    default_keys = Parameter.__slots__
+    #default_keys = Parameter.default_keys
 
     def __init__(self):
         
@@ -85,13 +87,20 @@ class Parameters(dict):
             Iterables of parameter attributes.
         """
         pars = cls()
-        for i in range(len(kwargs['name'])):
-            kw = {}
-            for key in kwargs:
-                if kwargs[key] is not None:
-                    kw[key] = kwargs[key][i]
-            pars.add_parameter(Parameter(**kw))
+        n = len(kwargs['value'])
+        if 'name' in kwargs:
+            names = kwargs['name']
+        else:
+            names = ['par' + str(i + 1) for i in range(n)]
             
+        for ipname, pname in enumerate(names):
+            par_kwargs = {}
+            par_kwargs['name'] = pname
+            par_kwargs['value'] = kwargs['value'][ipname]
+            for ikey, kw in enumerate(kwargs):
+                if kwargs[kw] is not None and kw not in par_kwargs:
+                    par_kwargs[kw] = kwargs[kw][ipname]
+            pars.add_parameter(Parameter(**par_kwargs))
         return pars
           
             
